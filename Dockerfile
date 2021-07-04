@@ -1,8 +1,10 @@
 FROM golang:alpine
-
+LABEL mainteiner = "Fernando Terrazas"
 WORKDIR /go/src/app
 
-ADD . .
+RUN go mod init hello
+
+COPY . .
 
 RUN go build -o helloworld
 
